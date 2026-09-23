@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arif Tak — AI &amp; Data Leader</title>
+<meta name="description" content="Arif Tak — AI & Data leader. Enterprise data strategy, agentic AI enablement, and data platform modernization for life sciences.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#000; --gray:#f5f5f7; --white:#fff; --ink:#1d1d1f;
+    --ink-2:rgba(0,0,0,.8); --ink-3:rgba(0,0,0,.56);
+    --dark-2:#a1a1a6; --card-dark:#1d1d1f;
+    --blue:#0071e3; --link:#0066cc; --link-dark:#2997ff;
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Inter, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:48px}
+  body{font-family:var(--font);color:var(--ink);background:var(--black);font-size:17px;line-height:1.47;letter-spacing:-.022em;-webkit-font-smoothing:antialiased}
+  a{color:var(--link);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  .wide{max-width:1200px}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:50;height:48px;background:rgba(0,0,0,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
+  nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between}
+  nav .brand{color:#f5f5f7;font-weight:600;font-size:15px;letter-spacing:-.01em}
+  nav ul{list-style:none;display:flex;gap:30px}
+  nav ul a{color:rgba(255,255,255,.86);font-size:13px;letter-spacing:-.01em}
+  nav ul a:hover{color:#fff;text-decoration:none}
+
+  /* Sections */
+  section{padding:120px 0}
+  .dark{background:var(--black);color:#f5f5f7}
+  .light{background:var(--gray)}
+  .white{background:var(--white)}
+  .eyebrow{font-size:17px;font-weight:600;color:var(--ink-3);margin-bottom:10px;letter-spacing:-.02em}
+  .dark .eyebrow{color:var(--dark-2)}
+  h1,h2,h3{font-weight:600;letter-spacing:-.015em}
+  .h-sec{font-size:clamp(34px,5vw,56px);line-height:1.07;margin-bottom:24px}
+  .lede{font-size:clamp(19px,2.2vw,24px);line-height:1.35;color:var(--ink-2);max-width:760px;letter-spacing:-.01em}
+  .dark .lede{color:var(--dark-2)}
+  .center{text-align:center}
+  .center .lede{margin:0 auto}
+
+  /* Hero */
+  .hero{min-height:calc(100vh - 48px);display:flex;align-items:center;padding:100px 0 80px}
+  .hero .kicker{font-size:clamp(19px,2.2vw,24px);font-weight:600;color:var(--dark-2);margin-bottom:14px}
+  .hero h1{font-size:clamp(48px,9vw,96px);line-height:1.02;letter-spacing:-.03em;margin-bottom:26px}
+  .hero h1 .grad{color:#f5f5f7}
+  .hero p.lede{font-size:clamp(20px,2.4vw,26px);line-height:1.35;max-width:36ch;margin:0 auto 40px;text-wrap:balance}
+  .ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 24px;border-radius:980px;font-size:17px;line-height:1.2;transition:background .2s,color .2s}
+  .btn-primary{background:var(--blue);color:#fff}
+  .btn-primary:hover{background:#0077ed;text-decoration:none}
+  .btn-ghost{color:var(--link-dark);border:1px solid var(--link-dark)}
+  .btn-ghost:hover{background:var(--link-dark);color:#000;text-decoration:none}
+
+  /* Numbers */
+  .numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:72px;border-top:1px solid #d2d2d7}
+  .num{padding:36px 20px 0 0}
+  .num b{display:block;font-size:clamp(36px,4.4vw,52px);font-weight:600;line-height:1;letter-spacing:-.03em;color:var(--ink)}
+  .num span{display:block;margin-top:12px;font-size:15px;color:var(--ink-2);line-height:1.35;max-width:200px}
+
+  /* Feature (primary impact) */
+  .feature{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
+  .feature h3{font-size:clamp(28px,3.6vw,40px);line-height:1.1;margin-bottom:20px}
+  .feature p{color:var(--dark-2);font-size:19px;line-height:1.45}
+  .outcome{border-top:1px solid #424245;padding-top:24px}
+  .outcome .big{font-size:clamp(72px,11vw,128px);font-weight:600;line-height:.95;letter-spacing:-.04em;color:#f5f5f7}
+  .outcome .cap{font-size:19px;color:#f5f5f7;margin-top:14px;line-height:1.35}
+  .outcome .sub{font-size:17px;color:var(--dark-2);line-height:1.45;margin-top:10px}
+
+  /* Impact tiles */
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px}
+  .tile{background:var(--white);border-radius:18px;padding:44px 40px 40px;display:flex;flex-direction:column;min-height:420px}
+  .tile .idx{font-size:14px;font-weight:600;color:var(--ink-3);margin-bottom:18px;letter-spacing:.02em;text-transform:uppercase}
+  .tile h3{font-size:26px;line-height:1.14;margin-bottom:16px}
+  .tile p{color:var(--ink-2);font-size:17px}
+  .tile .result{margin-top:auto;padding-top:28px}
+  .tile .result small{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+  .tile .result div{font-size:17px;color:var(--ink);font-weight:500;line-height:1.4}
+  .tile.span{grid-column:1 / -1;min-height:auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
+  .tile.span .result{padding-top:0}
+
+  /* Thought leadership */
+  .tl{margin-top:64px;border-top:1px solid #424245}
+  .tl-row{display:grid;grid-template-columns:300px 1fr;gap:40px;padding:28px 0;border-bottom:1px solid #424245;align-items:baseline}
+  .tl-row h3{font-size:21px;line-height:1.2;color:#f5f5f7}
+  .tl-row p,.tile p,.lede,.feature p{text-wrap:pretty}
+  .tl-row p{font-size:19px;color:var(--dark-2);line-height:1.4}
+
+  /* Timeline */
+  .timeline{margin-top:56px}
+  .role{display:grid;grid-template-columns:160px 1fr auto;gap:32px;padding:26px 0;border-bottom:1px solid #d2d2d7;align-items:baseline}
+  .role:first-child{border-top:1px solid #d2d2d7}
+  .role .yr{font-size:15px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+  .role h3{font-size:21px;line-height:1.25}
+  .role .co{font-size:17px;color:var(--ink-2)}
+  .role.now h3::after{content:"Current";margin-left:12px;font-size:12px;font-weight:600;color:var(--blue);border:1px solid var(--blue);border-radius:980px;padding:2px 10px;vertical-align:middle;letter-spacing:0}
+
+  /* Capabilities */
+  .caps{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:56px}
+  .caps h3{min-height:2.7em;font-size:14px;font-weight:600;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px}
+  .caps ul{list-style:none}
+  .caps li{font-size:17px;padding:7px 0;color:var(--ink);line-height:1.35;text-wrap:balance}
+
+  /* Credentials */
+  .creds{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;margin-top:56px}
+  .creds h3{font-size:14px;font-weight:600;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px}
+  .edu div{padding:16px 0;border-bottom:1px solid #d2d2d7}
+  .edu div:first-of-type{border-top:1px solid #d2d2d7}
+  .edu b{display:block;font-size:19px;font-weight:600;line-height:1.3}
+  .edu span{font-size:15px;color:var(--ink-3)}
+  .cert-list{columns:2;column-gap:40px;list-style:none}
+  .cert-list li{break-inside:avoid;padding:12px 0;border-bottom:1px solid #d2d2d7;font-size:16px;line-height:1.35}
+  .cert-list li span{display:block;font-size:14px;color:var(--ink-2);margin-top:2px}
+
+  /* Contact */
+  .contact{padding:140px 0}
+  .contact .h-sec{font-size:clamp(40px,7vw,80px);letter-spacing:-.03em}
+  .contact-links{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+  .contact-links a{color:var(--link-dark);font-size:21px}
+  .status{margin-top:56px;font-size:15px;color:var(--dark-2)}
+
+  footer{background:var(--gray);padding:20px 0;font-size:12px;color:var(--ink-3)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  /* Motion */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+
+  /* Responsive */
+  @media (max-width:900px){
+    section{padding:88px 0}
+    nav ul{gap:18px}
+    .numbers{grid-template-columns:1fr 1fr}
+    .feature,.tile.span,.creds{grid-template-columns:1fr;gap:40px}
+    .tiles{grid-template-columns:1fr}
+    .tile{min-height:auto}
+    .tl-row{grid-template-columns:1fr;gap:8px}
+    .caps{grid-template-columns:1fr 1fr}
+    .role{grid-template-columns:1fr;gap:4px}
+    .hero{min-height:auto;padding:96px 0 88px}
+  }
+  @media (max-width:600px){
+    nav ul{gap:14px}
+    nav ul li:nth-child(n+4){display:none}
+    nav ul a{display:inline-block;padding:12px 0}
+    .caps{grid-template-columns:1fr}
+    .cert-list{columns:1}
+    .tile{padding:32px 26px}
+  }
+</style>
+</head>
+<body>
+
+<nav aria-label="Primary">
+  <div class="wrap">
+    <a class="brand" href="#top">Arif Tak</a>
+    <ul>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#ai">AI Leadership</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="dark hero">
+  <div class="wrap center">
+    <p class="kicker reveal">AI &amp; Data Leader</p>
+    <h1 class="reveal"><span class="grad">Data, made<br>ready for AI.</span></h1>
+    <p class="lede reveal">I help life sciences leaders turn complex, regulated data into trusted assets, and put AI agents to work so medicines reach patients faster.</p>
+    <div class="ctas reveal">
+      <a class="btn btn-primary" href="#impact">See the impact</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- AT A GLANCE -->
+<section class="white">
+  <div class="wrap">
+    <p class="eyebrow reveal">At a glance</p>
+    <h2 class="h-sec reveal">A strategic advisor to the C‑suite.<br>A builder at heart.</h2>
+    <p class="lede reveal">I translate executive vision into strategy teams can execute: governance frameworks, access management and observability systems that last. The aim is always technical excellence that shows up as business results.</p>
+    <div class="numbers reveal">
+      <div class="num"><b>120+</b><span>consultants in the AI &amp; Data practice I lead</span></div>
+      <div class="num"><b>$20M+</b><span>annual budget under management</span></div>
+      <div class="num"><b>25+</b><span>engagements currently overseen</span></div>
+      <div class="num"><b>25 yrs</b><span>building enterprise data solutions, since 2001</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED IMPACT -->
+<section class="dark" id="impact">
+  <div class="wrap">
+    <p class="eyebrow reveal">Enterprise Data Strategy &amp; Governance</p>
+    <div class="feature">
+      <div class="reveal">
+        <h3>Leading data strategy for a global development division.</h3>
+        <p>I lead data strategy and enablement for Regeneron’s Global Development division. The framework covers agentic AI enablement, AI‑ready data, data quality, metadata management, data lineage and privacy standards.</p>
+      </div>
+      <div class="outcome reveal">
+        <div class="big">40%</div>
+        <div class="cap">Faster data enablement, targeted.</div>
+        <div class="sub">AI agents take on source‑to‑target mapping, FDD/TDD development, pipeline builds, A/B validation and DataOps.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT TILES -->
+<section class="light">
+  <div class="wrap">
+    <p class="eyebrow reveal">Executive impact scorecard</p>
+    <h2 class="h-sec reveal">What I build. What it changes.</h2>
+    <div class="tiles">
+      <article class="tile reveal">
+        <p class="idx">AI Transformation</p>
+        <h3>Rethinking how clinical studies are designed and run.</h3>
+        <p>A digital transformation program for early clinical development that combines digital tools, AI and better ways of working, with one mission: bring medicines to patients faster.</p>
+        <div class="result"><small>Outcome</small><div>Shorter development cycles, with time‑consuming manual work automated and handed to AI agents under human oversight.</div></div>
+      </article>
+      <article class="tile reveal">
+        <p class="idx">Architecture Center of Excellence</p>
+        <h3>A Life Sciences architecture CoE, built from the ground up.</h3>
+        <p>Domain architects across early clinical development, regulatory and medical affairs, patient safety and program management, working alongside platform, enterprise, data and AI architects.</p>
+        <div class="result"><small>Outcome</small><div>End‑to‑end architecture support, from build vs. buy to stage‑gate approvals before the enterprise SDER board.</div></div>
+      </article>
+      <article class="tile reveal">
+        <p class="idx">Product Development</p>
+        <h3>An Information Product Marketplace.</h3>
+        <p>Covers the full data product lifecycle: governance, access management, metadata, telemetry, data sharing, audit and observability. AI accelerators generate business metadata and build data products end to end.</p>
+        <div class="result"><small>Outcome</small><div>Trusted data on demand, so the business can respond to market changes faster and open new revenue through data monetization.</div></div>
+      </article>
+      <article class="tile reveal">
+        <p class="idx">Platform Modernization</p>
+        <h3>A modern data platform on Snowflake and Databricks.</h3>
+        <p>Legacy warehouses and databases replaced with cloud‑native solutions, data silos removed, and self‑service tools and simpler processes for business users.</p>
+        <div class="result"><small>Outcome</small><div>Self‑service access to trusted multi‑model data, with internal and external data‑sharing patterns for data owners.</div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- AI THOUGHT LEADERSHIP -->
+<section class="dark" id="ai">
+  <div class="wrap">
+    <p class="eyebrow reveal">AI thought leadership</p>
+    <h2 class="h-sec reveal">Agents across the<br>data lifecycle.</h2>
+    <p class="lede reveal">Five areas where I apply AI to change how data is governed, built and delivered.</p>
+    <div class="tl">
+      <div class="tl-row reveal"><h3>AI Digital Transformation</h3><p>Improve how EDC operates and how studies are designed and run, to bring medicines to patients faster.</p></div>
+      <div class="tl-row reveal"><h3>AI‑Ready Data</h3><p>Effective data management with governance controls for responsible AI use.</p></div>
+      <div class="tl-row reveal"><h3>AI Data Enablement</h3><p>Agent‑driven design, build, testing and operation of data products.</p></div>
+      <div class="tl-row reveal"><h3>AI Data Governance</h3><p>Agent‑driven enrichment of business metadata for data products.</p></div>
+      <div class="tl-row reveal"><h3>AI‑SDLC</h3><p>Agent‑driven requirements analysis, FDD, TDD, test scripts and JIRA task assignment.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="white" id="career">
+  <div class="wrap">
+    <p class="eyebrow reveal">Career</p>
+    <h2 class="h-sec reveal">From engineer to<br>enterprise leader.</h2>
+    <div class="timeline">
+      <div class="role now reveal"><span class="yr">2022 – Present</span><h3>Senior Leader, AI and Data</h3><span class="co">Ernst &amp; Young</span></div>
+      <div class="role reveal"><span class="yr">2021 – 2022</span><h3>Director, Insights and Data</h3><span class="co">Capgemini NA</span></div>
+      <div class="role reveal"><span class="yr">2016 – 2021</span><h3>National Solution Architect, Cloud and Big Data</h3><span class="co">Capgemini NA</span></div>
+      <div class="role reveal"><span class="yr">2014 – 2016</span><h3>Practice Head, Business Intelligence &amp; Analytics</h3><span class="co">Sogeti USA</span></div>
+      <div class="role reveal"><span class="yr">2012 – 2013</span><h3>Solution Architect</h3><span class="co">Sogeti USA</span></div>
+      <div class="role reveal"><span class="yr">2006 – 2012</span><h3>Senior Consultant</h3><span class="co">Sogeti USA</span></div>
+      <div class="role reveal"><span class="yr">2001 – 2006</span><h3>IT Analyst</h3><span class="co">Tata Consultancy Services</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="light" id="expertise">
+  <div class="wrap">
+    <p class="eyebrow reveal">Expertise</p>
+    <h2 class="h-sec reveal">Strategy to stack.</h2>
+    <div class="caps reveal">
+      <div><h3>Leadership &amp; Strategy</h3><ul><li>CxO Advisory &amp; Digital Transformation</li><li>AI &amp; Data Strategy</li><li>CoE Building &amp; Delivery Excellence</li><li>Product Development Life Cycle</li><li>Leadership Development &amp; Mentorship</li><li>Client &amp; Vendor Management</li></ul></div>
+      <div><h3>Data Management</h3><ul><li>Enterprise Data &amp; Solution Architecture</li><li>Data Governance</li><li>Strategy, Roadmap &amp; Blueprint</li><li>Data Product Monetization</li><li>Data Platform Modernization</li></ul></div>
+      <div><h3>AI &amp; Cloud</h3><ul><li><span style="white-space:nowrap">Snowflake</span> · <span style="white-space:nowrap">Databricks</span></li><li><span style="white-space:nowrap">Azure</span> · <span style="white-space:nowrap">AWS</span></li><li><span style="white-space:nowrap">LangChain</span> · <span style="white-space:nowrap">LangGraph</span> · <span style="white-space:nowrap">LangSmith</span></li><li><span style="white-space:nowrap">n8n</span> · <span style="white-space:nowrap">CrewAI</span></li><li><span style="white-space:nowrap">Claude</span> · <span style="white-space:nowrap">OpenAI</span> · <span style="white-space:nowrap">Grok</span></li></ul></div>
+      <div><h3>Technologies</h3><ul><li><span style="white-space:nowrap">Enterprise Data Modeling</span> · <span style="white-space:nowrap">ERwin</span></li><li><span style="white-space:nowrap">Oracle</span> · <span style="white-space:nowrap">MSSQL</span> · <span style="white-space:nowrap">MySQL</span></li><li>PL/SQL</li><li><span style="white-space:nowrap">Tableau</span> · <span style="white-space:nowrap">Qlik</span></li><li><span style="white-space:nowrap">Power BI</span> · <span style="white-space:nowrap">Spotfire</span></li><li><span style="white-space:nowrap">Python</span> · <span style="white-space:nowrap">Java</span> · <span style="white-space:nowrap">C/C++</span></li></ul></div>
+    </div>
+
+    <div class="creds">
+      <div class="edu reveal">
+        <h3>Education</h3>
+        <div><b>MBA, Systems and Marketing</b><span>Loyola Institute of Business Administration</span></div>
+        <div><b>B.E., Electronics &amp; Communications</b><span>Bangalore University</span></div>
+      </div>
+      <div class="reveal">
+        <h3>Certifications &amp; Training</h3>
+        <ul class="cert-list">
+          <li>AWS Solutions Architect – Associate<span>Amazon Web Services · Certified</span></li>
+          <li>Generative &amp; Agentic AI for Executives<span>Snowflake · Trained</span></li>
+          <li>Data Engineer &amp; CoCo Essentials<span>Snowflake · Trained</span></li>
+          <li>Generative AI &amp; AI Agent Fundamentals<span>Databricks · Trained</span></li>
+          <li>Fundamentals of Azure Databricks<span>Databricks · Trained</span></li>
+          <li>SAFe 5 Scrum Master<span>SAFe · Certified</span></li>
+          <li>Professional Scrum Master I<span>Scrum.org · Certified</span></li>
+          <li>Extreme Programming Professional<span>Kent Beck · Certified</span></li>
+          <li>IBM Commerce Administrator<span>IBM · Certified</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="dark contact" id="contact">
+  <div class="wrap center">
+    <h2 class="h-sec reveal">Let’s talk.</h2>
+    <p class="lede reveal">Open to conversations about AI transformation, enterprise data strategy and leadership roles.</p>
+    <div class="contact-links reveal">
+      <a href="mailto:arif.tak@gmail.com">arif.tak@gmail.com&nbsp;›</a>
+      <a href="https://www.linkedin.com/in/ariftak" target="_blank" rel="noopener">LinkedIn&nbsp;›</a>
+      <a href="tel:+15137650760">(513) 765‑0760&nbsp;›</a>
+    </div>
+    <p class="status reveal">U.S. Permanent Resident · Authorized to work for any U.S. employer</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Arif Tak. All rights reserved.</span>
+    <span><a href="https://www.arif.one">www.arif.one</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
