@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arif Tak — AI &amp; Data Leader</title>
 <meta name="description" content="Arif Tak — AI & Data leader. Enterprise data strategy, agentic AI enablement, and data platform modernization for life sciences.">
+<meta property="og:title" content="Arif Tak — AI &amp; Data Leader">
+<meta property="og:description" content="AI and Data Leader at EY. CxO advisory, enterprise data strategy and agentic AI enablement for life sciences.">
+<meta property="og:image" content="https://www.arif.one/photo.jpg">
+<meta property="og:url" content="https://www.arif.one/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Arif Tak","jobTitle":"AI and Data Leader","worksFor":{"@type":"Organization","name":"EY"},"address":{"@type":"PostalAddress","addressLocality":"Mason","addressRegion":"OH","addressCountry":"US"},"image":"https://www.arif.one/photo.jpg","url":"https://www.arif.one/","sameAs":["https://www.linkedin.com/in/ariftak"],"memberOf":{"@type":"Organization","name":"PMI"},"award":"Sogeti ACE Award","knowsLanguage":["English","Hindi"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -59,6 +67,24 @@
   .btn-primary:hover{background:#0077ed;text-decoration:none}
   .btn-ghost{color:var(--link-dark);border:1px solid var(--link-dark)}
   .btn-ghost:hover{background:var(--link-dark);color:#000;text-decoration:none}
+
+  /* Intro with portrait */
+  .intro{display:grid;grid-template-columns:1fr 260px;gap:64px;align-items:center}
+  .portrait{width:260px;height:260px;border-radius:50%;overflow:hidden;background:var(--gray);box-shadow:0 0 0 1px rgba(0,0,0,.08),0 18px 40px -18px rgba(0,0,0,.28)}
+  .portrait img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* Selected work */
+  .proj{display:grid;grid-template-columns:1fr 1fr;gap:0 56px;margin-top:56px}
+  .proj article{border-top:1px solid #424245;padding:28px 0 36px}
+  .proj .yr{font-size:14px;color:var(--dark-2);font-variant-numeric:tabular-nums}
+  .proj h3{font-size:24px;line-height:1.2;color:#f5f5f7;margin:8px 0 12px}
+  .proj p{font-size:17px;color:var(--dark-2);line-height:1.47;text-wrap:pretty}
+
+  /* Quote */
+  .quote{max-width:820px;margin:0 auto;text-align:center}
+  .quote blockquote{font-size:clamp(22px,2.6vw,30px);line-height:1.35;font-weight:400;letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
+  .quote figcaption{margin-top:28px;font-size:17px;color:var(--ink-3)}
+  .quote figcaption b{color:var(--ink);font-weight:600}
 
   /* Numbers */
   .numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:72px;border-top:1px solid #d2d2d7}
@@ -145,12 +171,17 @@
     .tile{min-height:auto}
     .tl-row{grid-template-columns:1fr;gap:8px}
     .caps{grid-template-columns:1fr 1fr}
+    .proj{grid-template-columns:1fr}
+    .intro{grid-template-columns:1fr;gap:32px}
+    .portrait{width:140px;height:140px;order:-1}
     .role{grid-template-columns:1fr;gap:4px}
     .hero{min-height:auto;padding:96px 0 88px}
   }
   @media (max-width:600px){
     nav ul{gap:14px}
     nav ul li:nth-child(n+4){display:none}
+    nav ul li:last-child{display:list-item}
+    nav ul li:nth-child(3){display:none}
     nav ul a{display:inline-block;padding:12px 0}
     .caps{grid-template-columns:1fr}
     .cert-list{columns:1}
@@ -167,6 +198,7 @@
       <li><a href="#impact">Impact</a></li>
       <li><a href="#ai">AI Leadership</a></li>
       <li><a href="#career">Career</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#expertise">Expertise</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -178,7 +210,7 @@
 <!-- HERO -->
 <section class="dark hero">
   <div class="wrap center">
-    <p class="kicker reveal">AI &amp; Data Leader</p>
+    <p class="kicker reveal">AI &amp; Data Leader · CxO Advisory</p>
     <h1 class="reveal"><span class="grad">Data, made<br>ready for AI.</span></h1>
     <p class="lede reveal">I help life sciences leaders turn complex, regulated data into trusted assets, and put AI agents to work so medicines reach patients faster.</p>
     <div class="ctas reveal">
@@ -191,9 +223,14 @@
 <!-- AT A GLANCE -->
 <section class="white">
   <div class="wrap">
-    <p class="eyebrow reveal">At a glance</p>
-    <h2 class="h-sec reveal">A strategic advisor to the C‑suite.<br>A builder at heart.</h2>
-    <p class="lede reveal">I translate executive vision into strategy teams can execute: governance frameworks, access management and observability systems that last. The aim is always technical excellence that shows up as business results.</p>
+    <div class="intro">
+      <div>
+        <p class="eyebrow reveal">At a glance</p>
+        <h2 class="h-sec reveal">A strategic advisor to the C‑suite.<br>A builder at heart.</h2>
+        <p class="lede reveal">I orchestrate AI‑driven business transformation for enterprise clients, translating executive vision into strategy teams can execute: governance frameworks, access management and observability systems that last.</p>
+      </div>
+      <div class="portrait reveal"><picture><source srcset="photo.webp" type="image/webp"><img src="photo.jpg" width="480" height="480" alt="Portrait of Arif Tak"></picture></div>
+    </div>
     <div class="numbers reveal">
       <div class="num"><b>120+</b><span>consultants in the AI &amp; Data practice I lead</span></div>
       <div class="num"><b>$20M+</b><span>annual budget under management</span></div>
@@ -288,13 +325,28 @@
   </div>
 </section>
 
+<!-- SELECTED WORK -->
+<section class="dark" id="work">
+  <div class="wrap">
+    <p class="eyebrow reveal">Selected work</p>
+    <h2 class="h-sec reveal">Platforms built to last.</h2>
+    <p class="lede reveal">The groundwork for today’s AI programs: two decades of enterprise data platforms, from on‑premise data lakes to cloud‑native lakehouses.</p>
+    <div class="proj">
+      <article class="reveal"><span class="yr">2022</span><h3>Project Diamond</h3><p>Assessment and roadmap for separating a business unit’s application services, using a common workflow and a repeatable factory approach to plan and run the separation across the enterprise.</p></article>
+      <article class="reveal"><span class="yr">2019 – 2022</span><h3>Digital Core</h3><p>An enterprise “data as a service” platform on Azure (ADLS, Databricks Delta Lake, ADF and Synapse), built on an enterprise data model to give analysts and data scientists a self‑service semantic layer over SAP data.</p></article>
+      <article class="reveal"><span class="yr">2018 – 2019</span><h3>Common Data Lake</h3><p>An on‑premise Cloudera enterprise data lake ingesting global ERP transactions, internal application data and third‑party point‑of‑sale feeds, with landing zones designed for security and performance.</p></article>
+      <article class="reveal"><span class="yr">2016 – 2018</span><h3>Trade Promotion Excellence</h3><p>A unified global view of trade promotions and their impact on supply chain, vendor inventory management, ROI and efficiency.</p></article>
+    </div>
+  </div>
+</section>
+
 <!-- EXPERTISE -->
 <section class="light" id="expertise">
   <div class="wrap">
     <p class="eyebrow reveal">Expertise</p>
     <h2 class="h-sec reveal">Strategy to stack.</h2>
     <div class="caps reveal">
-      <div><h3>Leadership &amp; Strategy</h3><ul><li>CxO Advisory &amp; Digital Transformation</li><li>AI &amp; Data Strategy</li><li>CoE Building &amp; Delivery Excellence</li><li>Product Development Life Cycle</li><li>Leadership Development &amp; Mentorship</li><li>Client &amp; Vendor Management</li></ul></div>
+      <div><h3>Leadership &amp; Strategy</h3><ul><li>CxO Advisory &amp; Digital Transformation</li><li>AI &amp; Data Strategy</li><li>CoE Building &amp; Delivery Excellence</li><li>Product Development Life Cycle</li><li>Leadership Development &amp; Mentorship</li><li style="text-wrap:nowrap">Client &amp; Vendor Management</li></ul></div>
       <div><h3>Data Management</h3><ul><li>Enterprise Data &amp; Solution Architecture</li><li>Data Governance</li><li>Strategy, Roadmap &amp; Blueprint</li><li>Data Product Monetization</li><li>Data Platform Modernization</li></ul></div>
       <div><h3>AI &amp; Cloud</h3><ul><li><span style="white-space:nowrap">Snowflake</span> · <span style="white-space:nowrap">Databricks</span></li><li><span style="white-space:nowrap">Azure</span> · <span style="white-space:nowrap">AWS</span></li><li><span style="white-space:nowrap">LangChain</span> · <span style="white-space:nowrap">LangGraph</span> · <span style="white-space:nowrap">LangSmith</span></li><li><span style="white-space:nowrap">n8n</span> · <span style="white-space:nowrap">CrewAI</span></li><li><span style="white-space:nowrap">Claude</span> · <span style="white-space:nowrap">OpenAI</span> · <span style="white-space:nowrap">Grok</span></li></ul></div>
       <div><h3>Technologies</h3><ul><li><span style="white-space:nowrap">Enterprise Data Modeling</span> · <span style="white-space:nowrap">ERwin</span></li><li><span style="white-space:nowrap">Oracle</span> · <span style="white-space:nowrap">MSSQL</span> · <span style="white-space:nowrap">MySQL</span></li><li>PL/SQL</li><li><span style="white-space:nowrap">Tableau</span> · <span style="white-space:nowrap">Qlik</span></li><li><span style="white-space:nowrap">Power BI</span> · <span style="white-space:nowrap">Spotfire</span></li><li><span style="white-space:nowrap">Python</span> · <span style="white-space:nowrap">Java</span> · <span style="white-space:nowrap">C/C++</span></li></ul></div>
@@ -305,11 +357,16 @@
         <h3>Education</h3>
         <div><b>MBA, Systems and Marketing</b><span>Loyola Institute of Business Administration</span></div>
         <div><b>B.E., Electronics &amp; Communications</b><span>Bangalore University</span></div>
+        <h3 style="margin-top:44px">Recognition &amp; Affiliations</h3>
+        <div><b>Sogeti ACE Award</b><span>Sogeti USA · 2014</span></div>
+        <div><b>Project Management Institute</b><span>Member since 2008</span></div>
+        <div><b>Languages</b><span>English · Hindi</span></div>
       </div>
       <div class="reveal">
         <h3>Certifications &amp; Training</h3>
         <ul class="cert-list">
-          <li>AWS Solutions Architect – Associate<span>Amazon Web Services · Certified</span></li>
+          <li>Immuta Certified Architect<span>Immuta · Certified 2025</span></li>
+          <li>AWS Solutions Architect – Associate<span>Amazon Web Services · Certified 2016</span></li>
           <li>Generative &amp; Agentic AI for Executives<span>Snowflake · Trained</span></li>
           <li>Data Engineer &amp; CoCo Essentials<span>Snowflake · Trained</span></li>
           <li>Generative AI &amp; AI Agent Fundamentals<span>Databricks · Trained</span></li>
@@ -324,6 +381,14 @@
   </div>
 </section>
 
+<!-- RECOMMENDATION -->
+<section class="white">
+  <figure class="quote reveal">
+    <blockquote>“Arif is an excellent technical resource, manager, and counselor for his peers. He will always be supportive and seeks the best for his peers, while also leading by example and delivering beyond client’s expectations.”</blockquote>
+    <figcaption><b>Alyse Golden</b> · Colleague at Sogeti USA, via LinkedIn</figcaption>
+  </figure>
+</section>
+
 <!-- CONTACT -->
 <section class="dark contact" id="contact">
   <div class="wrap center">
@@ -334,7 +399,7 @@
       <a href="https://www.linkedin.com/in/ariftak" target="_blank" rel="noopener">LinkedIn&nbsp;›</a>
       <a href="tel:+15137650760">(513) 765‑0760&nbsp;›</a>
     </div>
-    <p class="status reveal">U.S. Permanent Resident · Authorized to work for any U.S. employer</p>
+    <p class="status reveal">Based in Mason, Ohio · U.S. Permanent Resident · Authorized to work for any U.S. employer</p>
   </div>
 </section>
 
