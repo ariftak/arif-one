@@ -129,22 +129,25 @@
   .role .co{font-size:17px;color:var(--ink-2)}
   .role.now h3::after{content:"Current";margin-left:12px;font-size:12px;font-weight:600;color:var(--blue);border:1px solid var(--blue);border-radius:980px;padding:2px 10px;vertical-align:middle;letter-spacing:0}
 
-  /* Capabilities */
-  .caps{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:56px}
-  .caps h3{min-height:2.7em;font-size:14px;font-weight:600;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px}
-  .caps ul{list-style:none}
-  .caps li{font-size:17px;padding:7px 0;color:var(--ink);line-height:1.35;text-wrap:balance}
-
-  /* Credentials */
-  .creds{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;margin-top:56px}
-  .creds h3{font-size:14px;font-weight:600;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px}
-  .edu div{padding:16px 0;border-bottom:1px solid #d2d2d7}
-  .edu div:first-of-type{border-top:1px solid #d2d2d7}
-  .edu b{display:block;font-size:19px;font-weight:600;line-height:1.3}
-  .edu span{font-size:15px;color:var(--ink-3)}
-  .cert-list{columns:2;column-gap:40px;list-style:none}
-  .cert-list li{break-inside:avoid;padding:12px 0;border-bottom:1px solid #d2d2d7;font-size:16px;line-height:1.35}
-  .cert-list li span{display:block;font-size:14px;color:var(--ink-2);margin-top:2px}
+  /* Expertise (scoped) */
+  #expertise .xp-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px}
+  #expertise .xp-card{background:#fff;border-radius:18px;padding:36px 40px}
+  #expertise .xp-wide{grid-column:1 / -1}
+  #expertise .xp-h{font-size:13px;font-weight:600;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px}
+  #expertise .xp-h2{margin-top:36px}
+  #expertise .xp-list{list-style:none}
+  #expertise .xp-list li{font-size:19px;line-height:1.35;font-weight:500;color:var(--ink);padding:9px 0;letter-spacing:-.01em}
+  #expertise .xp-tools{display:grid;grid-template-columns:1fr 1fr;gap:100px}
+  #expertise .xp-chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  #expertise .xp-chips li{font-size:15px;line-height:1;padding:9px 14px;border-radius:980px;background:var(--gray);color:var(--ink)}
+  #expertise .xp-eyebrow{margin-top:112px}
+  #expertise .xp-sub{font-size:clamp(34px,4.2vw,48px);font-weight:600;letter-spacing:-.025em;line-height:1.08;color:var(--ink)}
+  #expertise .xp-creds{margin-top:40px}
+  #expertise .xp-rows{list-style:none}
+  #expertise .xp-rows li{display:block;padding:14px 0;border-top:1px solid #e8e8ed}
+  #expertise .xp-rows li:first-child{border-top:0;padding-top:0}
+  #expertise .xp-rows b{display:block;font-size:17px;font-weight:500;line-height:1.35;color:var(--ink)}
+  #expertise .xp-rows span{display:block;font-size:14px;color:var(--ink-3);margin-top:3px}
 
   /* Contact */
   .contact{padding:140px 0}
@@ -216,11 +219,12 @@
     section{padding:88px 0}
     nav ul{gap:18px}
     .numbers{grid-template-columns:1fr 1fr}
-    .feature,.tile.span,.creds{grid-template-columns:1fr;gap:40px}
+    .feature,.tile.span{grid-template-columns:1fr;gap:40px}
     .tiles{grid-template-columns:1fr}
     .tile{min-height:auto}
     .tl-row{grid-template-columns:1fr;gap:8px}
-    .caps{grid-template-columns:1fr 1fr}
+    #expertise .xp-grid,#expertise .xp-tools{grid-template-columns:1fr}
+    #expertise .xp-tools{gap:32px}
     .proj{grid-template-columns:1fr}
     .intro{grid-template-columns:1fr;gap:32px}
     .portrait{width:140px;height:140px;order:-1}
@@ -233,8 +237,9 @@
     nav ul li:last-child{display:list-item}
     nav ul li:nth-child(3){display:none}
     nav ul a{display:inline-block;padding:12px 0}
-    .caps{grid-template-columns:1fr}
-    .cert-list{columns:1}
+    #expertise .xp-card{padding:28px 24px;border-radius:16px}
+    #expertise .xp-list li{font-size:17px;padding:7px 0}
+    #expertise .xp-eyebrow{margin-top:72px}
     .tile{padding:32px 26px}
   }
 </style>
@@ -402,36 +407,82 @@
   <div class="wrap">
     <p class="eyebrow reveal">Expertise</p>
     <h2 class="h-sec reveal">Strategy to stack.</h2>
-    <div class="caps reveal">
-      <div><h3>Leadership &amp; Strategy</h3><ul><li>CxO Advisory &amp; Digital Transformation</li><li>AI &amp; Data Strategy</li><li>CoE Building &amp; Delivery Excellence</li><li>Product Development Life Cycle</li><li>Leadership Development &amp; Mentorship</li><li style="text-wrap:nowrap">Client &amp; Vendor Management</li></ul></div>
-      <div><h3>Data Management</h3><ul><li>Enterprise Data &amp; Solution Architecture</li><li>Data Governance</li><li>Strategy, Roadmap &amp; Blueprint</li><li>Data Product Monetization</li><li>Data Platform Modernization</li></ul></div>
-      <div><h3>AI &amp; Cloud</h3><ul><li><span style="white-space:nowrap">Snowflake</span> · <span style="white-space:nowrap">Databricks</span></li><li><span style="white-space:nowrap">Azure</span> · <span style="white-space:nowrap">AWS</span></li><li><span style="white-space:nowrap">LangChain</span> · <span style="white-space:nowrap">LangGraph</span> · <span style="white-space:nowrap">LangSmith</span></li><li><span style="white-space:nowrap">n8n</span> · <span style="white-space:nowrap">CrewAI</span></li><li><span style="white-space:nowrap">Claude</span> · <span style="white-space:nowrap">OpenAI</span> · <span style="white-space:nowrap">Grok</span></li></ul></div>
-      <div><h3>Technologies</h3><ul><li><span style="white-space:nowrap">Enterprise Data Modeling</span> · <span style="white-space:nowrap">ERwin</span></li><li><span style="white-space:nowrap">Oracle</span> · <span style="white-space:nowrap">MSSQL</span> · <span style="white-space:nowrap">MySQL</span></li><li>PL/SQL</li><li><span style="white-space:nowrap">Tableau</span> · <span style="white-space:nowrap">Qlik</span></li><li><span style="white-space:nowrap">Power BI</span> · <span style="white-space:nowrap">Spotfire</span></li><li><span style="white-space:nowrap">Python</span> · <span style="white-space:nowrap">Java</span> · <span style="white-space:nowrap">C/C++</span></li></ul></div>
+
+    <div class="xp-grid reveal">
+      <div class="xp-card">
+        <h3 class="xp-h">Leadership &amp; Strategy</h3>
+        <ul class="xp-list">
+          <li>CxO Advisory &amp; Digital Transformation</li>
+          <li>AI &amp; Data Strategy</li>
+          <li>CoE Building &amp; Delivery Excellence</li>
+          <li>Product Development Life Cycle</li>
+          <li>Leadership Development &amp; Mentorship</li>
+          <li>Client &amp; Vendor Management</li>
+        </ul>
+      </div>
+      <div class="xp-card">
+        <h3 class="xp-h">Data Management</h3>
+        <ul class="xp-list">
+          <li>Enterprise Data &amp; Solution Architecture</li>
+          <li>Data Governance</li>
+          <li>Strategy, Roadmap &amp; Blueprint</li>
+          <li>Data Product Monetization</li>
+          <li>Data Platform Modernization</li>
+        </ul>
+      </div>
+      <div class="xp-card xp-wide">
+        <div class="xp-tools">
+          <div>
+            <h3 class="xp-h">AI &amp; Cloud</h3>
+            <ul class="xp-chips">
+              <li>Snowflake</li><li>Databricks</li><li>Azure</li><li>AWS</li>
+              <li>LangChain</li><li>LangGraph</li><li>LangSmith</li><li>n8n</li><li>CrewAI</li>
+              <li>Claude</li><li>OpenAI</li><li>Grok</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="xp-h">Technologies</h3>
+            <ul class="xp-chips">
+              <li>Python</li><li>Java</li><li>C/C++</li><li>PL/SQL</li><li>Oracle</li><li>MSSQL</li><li>MySQL</li>
+              <li>Power BI</li><li>Tableau</li><li>Qlik</li><li>Spotfire</li><li>Enterprise Data Modeling</li><li>ERwin</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="creds">
-      <div class="edu reveal">
-        <h3>Education</h3>
-        <div><b>MBA, Systems and Marketing</b><span>Loyola Institute of Business Administration</span></div>
-        <div><b>B.E., Electronics &amp; Communications</b><span>Bangalore University</span></div>
-        <h3 style="margin-top:44px">Recognition &amp; Affiliations</h3>
-        <div><b>Sogeti ACE Award</b><span>Sogeti USA · 2014</span></div>
-        <div><b>Project Management Institute</b><span>Member since 2008</span></div>
-        <div><b>Languages</b><span>English · Hindi</span></div>
+    <p class="eyebrow reveal xp-eyebrow">Credentials</p>
+    <h3 class="xp-sub reveal">Always learning.</h3>
+    <div class="xp-grid xp-creds reveal">
+      <div class="xp-card">
+        <h3 class="xp-h">Education</h3>
+        <ul class="xp-rows">
+          <li><b>MBA, Systems and Marketing</b><span>Loyola Institute of Business Administration</span></li>
+          <li><b>B.E., Electronics &amp; Communications</b><span>Bangalore University</span></li>
+        </ul>
+        <h3 class="xp-h xp-h2">Certifications</h3>
+        <ul class="xp-rows">
+          <li><b>Immuta Certified Architect</b><span>Immuta · 2025</span></li>
+          <li><b>AWS Solutions Architect – Associate</b><span>Amazon Web Services · 2016</span></li>
+          <li><b>SAFe 5 Scrum Master</b><span>Scaled Agile</span></li>
+          <li><b>Professional Scrum Master I</b><span>Scrum.org</span></li>
+          <li><b>Extreme Programming Professional</b><span>Kent Beck</span></li>
+          <li><b>IBM Commerce Administrator</b><span>IBM</span></li>
+        </ul>
       </div>
-      <div class="reveal">
-        <h3>Certifications &amp; Training</h3>
-        <ul class="cert-list">
-          <li>Immuta Certified Architect<span>Immuta · Certified 2025</span></li>
-          <li>AWS Solutions Architect – Associate<span>Amazon Web Services · Certified 2016</span></li>
-          <li>Generative &amp; Agentic AI for Executives<span>Snowflake · Trained</span></li>
-          <li>Data Engineer &amp; CoCo Essentials<span>Snowflake · Trained</span></li>
-          <li>Generative AI &amp; AI Agent Fundamentals<span>Databricks · Trained</span></li>
-          <li>Fundamentals of Azure Databricks<span>Databricks · Trained</span></li>
-          <li>SAFe 5 Scrum Master<span>SAFe · Certified</span></li>
-          <li>Professional Scrum Master I<span>Scrum.org · Certified</span></li>
-          <li>Extreme Programming Professional<span>Kent Beck · Certified</span></li>
-          <li>IBM Commerce Administrator<span>IBM · Certified</span></li>
+      <div class="xp-card">
+        <h3 class="xp-h">Recognition &amp; Affiliations</h3>
+        <ul class="xp-rows">
+          <li><b>Sogeti ACE Award</b><span>Sogeti USA · 2014</span></li>
+          <li><b>Project Management Institute</b><span>Member since 2008</span></li>
+          <li><b>Languages</b><span>English · Hindi</span></li>
+        </ul>
+        <h3 class="xp-h xp-h2">Training</h3>
+        <ul class="xp-rows">
+          <li><b>Generative &amp; Agentic AI for Executives</b><span>Snowflake</span></li>
+          <li><b>Data Engineer &amp; CoCo Essentials</b><span>Snowflake</span></li>
+          <li><b>Generative AI &amp; AI Agent Fundamentals</b><span>Databricks</span></li>
+          <li><b>Fundamentals of Azure Databricks</b><span>Databricks</span></li>
         </ul>
       </div>
     </div>
