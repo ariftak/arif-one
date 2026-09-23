@@ -56,11 +56,11 @@
   .center .lede{margin:0 auto}
 
   /* Hero */
-  .hero{min-height:calc(100vh - 48px);display:flex;align-items:center;padding:100px 0 80px}
+  .hero{min-height:calc(100vh - 48px);display:flex;align-items:center;padding:72px 0 64px}
   .hero .kicker{font-size:clamp(19px,2.2vw,24px);font-weight:600;color:var(--dark-2);margin-bottom:14px}
-  .hero h1{font-size:clamp(48px,9vw,96px);line-height:1.02;letter-spacing:-.03em;margin-bottom:26px}
+  .hero h1{font-size:clamp(48px,8vw,88px);line-height:1.02;letter-spacing:-.03em;margin-bottom:26px}
   .hero h1 .grad{color:#f5f5f7}
-  .hero p.lede{font-size:clamp(20px,2.4vw,26px);line-height:1.35;max-width:36ch;margin:0 auto 40px;text-wrap:balance}
+  .hero p.lede{font-size:clamp(20px,2.2vw,24px);line-height:1.35;max-width:38ch;margin:0 auto 32px;text-wrap:balance}
   .ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
   .btn{display:inline-block;padding:12px 24px;border-radius:980px;font-size:17px;line-height:1.2;transition:background .2s,color .2s}
   .btn-primary{background:var(--blue);color:#fff}
@@ -159,6 +159,56 @@
   /* Motion */
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Capability showcase (hero) ---------- */
+  .hcaps{margin:44px auto 0;max-width:1080px;display:block}
+  .hcaps-label{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#86868b;margin-bottom:10px}
+  .hcaps-stage{position:relative;height:clamp(52px,6vw,72px);overflow:hidden;-webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent)}
+  .hcaps-word{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-size:clamp(30px,4.4vw,50px);font-weight:700;letter-spacing:-.022em;line-height:1.05;white-space:nowrap;
+    background:linear-gradient(90deg,#2997ff 0%,#a78bfa 35%,#f472b6 65%,#2997ff 100%);background-size:200% 100%;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    opacity:0;transform:translateY(60%);filter:blur(6px);
+    transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1),filter .7s;
+    animation:capsShimmer 6s linear infinite}
+  .hcaps-word.on{opacity:1;transform:none;filter:none}
+  .hcaps-word.out{opacity:0;transform:translateY(-60%);filter:blur(6px)}
+  @keyframes capsShimmer{to{background-position:-200% 0}}
+  .hcaps-proof{min-height:3em;max-width:60ch;margin:8px auto 22px;text-wrap:balance;font-size:clamp(16px,1.8vw,19px);line-height:1.5;color:#a1a1a6;
+    transition:opacity .45s ease}
+  .hcaps-proof.fade{opacity:0}
+  .hcaps-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+  .cap-pill{position:relative;overflow:hidden;appearance:none;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);
+    color:#d2d2d7;font:inherit;font-size:13px;font-weight:500;padding:7px 13px;white-space:nowrap;border-radius:980px;cursor:pointer;
+    transition:color .3s,border-color .3s,background .3s}
+  .cap-pill:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+  .cap-pill .bar{position:absolute;left:14px;right:14px;bottom:3px;width:auto!important;border-radius:2px;height:2px;width:100%;background:#2997ff;transform:scaleX(0);transform-origin:left}
+  .cap-pill.on{color:#fff;border-color:rgba(41,151,255,.7);background:rgba(41,151,255,.12)}
+  .cap-pill.on .bar{animation:capsBar var(--dur,3800ms) linear forwards}
+  .hcaps.paused .cap-pill.on .bar{animation-play-state:paused}
+  @keyframes capsBar{to{transform:scaleX(1)}}
+  .hcaps-static{display:none}
+  @media (max-width:734px){
+    .hcaps{margin-top:44px}
+    .hcaps-word{white-space:normal;text-align:center}
+    .hcaps-stage{height:84px}
+    .hcaps-proof{min-height:4.6em}
+    .cap-pill{font-size:13px;padding:8px 13px;white-space:normal}
+    .hcaps-static{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .hcaps-stage,.hcaps-proof,.hcaps-nav{display:none}
+    .hcaps-static{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 36px;text-align:left;margin-top:14px}
+    .hcaps-static h3{font-size:19px;letter-spacing:-.01em;text-transform:none;color:#f5f5f7;margin-bottom:4px}
+    .hcaps-static p{font-size:15px;line-height:1.45;color:#a1a1a6}
+  }
+
+  @media (min-width:735px) and (max-height:860px){
+    .hero{padding:56px 0 48px}
+    .hero h1{font-size:clamp(44px,6.6vw,76px);margin-bottom:20px}
+    .hero p.lede{margin-bottom:26px}
+    .hcaps{margin-top:34px}
+  }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
 
   /* Responsive */
@@ -216,6 +266,13 @@
     <div class="ctas reveal">
       <a class="btn btn-primary" href="#impact">See the impact</a>
       <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+    <div class="hcaps reveal" id="caps" aria-roledescription="carousel" aria-label="Key accomplishments">
+      <p class="hcaps-label">Where I deliver</p>
+      <div class="hcaps-stage"><span class="hcaps-word on" aria-hidden="true">Data Strategy</span><span class="hcaps-word" aria-hidden="true">AI Product Development</span><span class="hcaps-word" aria-hidden="true">AI‑Ready Data</span><span class="hcaps-word" aria-hidden="true">Data Product Monetization</span><span class="hcaps-word" aria-hidden="true">Data Marketplace</span><span class="hcaps-word" aria-hidden="true">Data Governance</span></div>
+      <p class="hcaps-proof" aria-live="polite">Leading data strategy and enablement for a global biopharma development division.</p>
+      <div class="hcaps-nav" role="group" aria-label="Choose a capability"><button type="button" class="cap-pill on" data-i="0" data-proof="Leading data strategy and enablement for a global biopharma development division." aria-pressed="true">Data Strategy<span class="bar"></span></button><button type="button" class="cap-pill" data-i="1" data-proof="AI agents that design, build, test and operate data products, with humans in the loop." aria-pressed="false">AI Product Development<span class="bar"></span></button><button type="button" class="cap-pill" data-i="2" data-proof="Quality, metadata, lineage and privacy standards that make enterprise data fit for agentic AI." aria-pressed="false">AI‑Ready Data<span class="bar"></span></button><button type="button" class="cap-pill" data-i="3" data-proof="Turning data products into reusable business assets with clear owners and measurable value." aria-pressed="false">Data Product Monetization<span class="bar"></span></button><button type="button" class="cap-pill" data-i="4" data-proof="An Information Product Marketplace: governed access, metadata, telemetry, sharing, audit and observability." aria-pressed="false">Data Marketplace<span class="bar"></span></button><button type="button" class="cap-pill" data-i="5" data-proof="AI‑assisted governance, with agents enriching business metadata across data products." aria-pressed="false">Data Governance<span class="bar"></span></button></div>
+      <div class="hcaps-static"><div><h3>Data Strategy</h3><p>Leading data strategy and enablement for a global biopharma development division.</p></div><div><h3>AI Product Development</h3><p>AI agents that design, build, test and operate data products, with humans in the loop.</p></div><div><h3>AI‑Ready Data</h3><p>Quality, metadata, lineage and privacy standards that make enterprise data fit for agentic AI.</p></div><div><h3>Data Product Monetization</h3><p>Turning data products into reusable business assets with clear owners and measurable value.</p></div><div><h3>Data Marketplace</h3><p>An Information Product Marketplace: governed access, metadata, telemetry, sharing, audit and observability.</p></div><div><h3>Data Governance</h3><p>AI‑assisted governance, with agents enriching business metadata across data products.</p></div></div>
     </div>
   </div>
 </section>
@@ -418,6 +475,35 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  (() => {
+    const root = document.getElementById('caps'); if (!root) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const words = [...root.querySelectorAll('.hcaps-word')];
+    const pills = [...root.querySelectorAll('.cap-pill')];
+    const proof = root.querySelector('.hcaps-proof');
+    let cur = 0;
+    function go(n){
+      if (n === cur) return;
+      const prev = cur; cur = (n + pills.length) % pills.length;
+      words[prev].classList.remove('on'); words[prev].classList.add('out');
+      setTimeout(() => words[prev].classList.remove('out'), 700);
+      words[cur].classList.add('on');
+      pills.forEach((p,i) => { const on = i === cur; p.classList.toggle('on', on); p.setAttribute('aria-pressed', on); });
+      proof.classList.add('fade');
+      setTimeout(() => { proof.textContent = pills[cur].dataset.proof; proof.classList.remove('fade'); }, 250);
+    }
+    pills.forEach(p => {
+      p.querySelector('.bar').addEventListener('animationend', () => { if (p.classList.contains('on')) go(cur + 1); });
+      p.addEventListener('click', () => go(+p.dataset.i));
+    });
+    const pause = v => root.classList.toggle('paused', v);
+    root.addEventListener('mouseenter', () => pause(true));
+    root.addEventListener('mouseleave', () => pause(false));
+    root.addEventListener('focusin', () => pause(true));
+    root.addEventListener('focusout', () => pause(false));
+    document.addEventListener('visibilitychange', () => pause(document.hidden));
+  })();
 </script>
 </body>
 </html>
